@@ -1,23 +1,22 @@
-document.addEventListener('DOMContentLoaded', function() {
-    // Smooth scrolling untuk tautan navigasi
-    document.querySelectorAll('nav a').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-            e.preventDefault();
+// Animasi Scroll
+document.addEventListener("scroll", () => {
+  const sections = document.querySelectorAll("section");
+  sections.forEach((section) => {
+    const rect = section.getBoundingClientRect();
+    if (rect.top < window.innerHeight * 0.8) {
+      section.style.opacity = "1";
+      section.style.transform = "translateY(0)";
+    }
+  });
+});
 
-            document.querySelector(this.getAttribute('href')).scrollIntoView({
-                behavior: 'smooth'
-            });
-        });
-    });
-
-    // Tambahkan efek hover pada item portofolio (opsional, bisa dilakukan dengan CSS)
-    // document.querySelectorAll('.portfolio-item img').forEach(img => {
-    //     img.addEventListener('mouseover', function() {
-    //         this.style.transform = 'scale(1.05)';
-    //     });
-    //
-    //     img.addEventListener('mouseout', function() {
-    //         this.style.transform = 'scale(1)';
-    //     });
-    // });
+// Efek Hover pada Card
+const cards = document.querySelectorAll(".card");
+cards.forEach((card) => {
+  card.addEventListener("mouseenter", () => {
+    card.style.boxShadow = "0 0 20px #00ffcc";
+  });
+  card.addEventListener("mouseleave", () => {
+    card.style.boxShadow = "none";
+  });
 });
