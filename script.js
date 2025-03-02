@@ -37,7 +37,7 @@ document.addEventListener("DOMContentLoaded", () => {
 // Tambahkan ini di script.js
 // Tambahkan ini di script.js
 document.addEventListener("DOMContentLoaded", () => {
-  const text = "Halo saya...";
+  const text = "Halo saya adalah pengembang komunitas dan bisnis professional";
   const animatedText = document.getElementById("animated-text");
   let index = 0;
 
