@@ -25,31 +25,53 @@ header {
   padding: 100px 0;
   text-align: center;
 }
-#animated-menu {
-  padding: 60px 0;
-  background: rgba(13, 13, 13, 0.8);
+/* Tambahkan ini di style.css */
+nav {
+  position: relative;
+  margin: 20px;
 }
 
-.menu-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 10px;
+#menu-toggle {
+  background: #00ffcc;
+  color: #0d0d0d;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1.2rem;
+  transition: box-shadow 0.3s ease;
+}
+
+#menu-toggle:hover {
+  box-shadow: 0 0 10px #00ffcc, 0 0 20px #00ffcc;
+}
+
+#menu-list {
+  list-style: none;
+  padding: 0;
+  margin: 10px 0;
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: opacity 0.5s ease, max-height 0.5s ease;
+}
+
+#menu-list.visible {
+  opacity: 1;
+  max-height: 500px; /* Sesuaikan dengan tinggi menu */
 }
 
 .menu-item {
   background: rgba(26, 26, 26, 0.9);
   color: #00ffcc;
-  padding: 15px 30px;
+  padding: 10px 20px;
+  margin: 5px 0;
   border: 1px solid #00ffcc;
   border-radius: 5px;
   opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.5s ease, transform 0.5s ease;
+  transform: translateX(-20px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
   cursor: pointer;
-  text-align: center;
-  width: 80%;
-  max-width: 600px;
 }
 
 .menu-item:hover {
