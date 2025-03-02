@@ -1,4 +1,4 @@
-body {
+body.cyberpunk-body {
     background-color: #111;
     color: #00ff00;
     font-family: 'Courier New', monospace;
@@ -16,6 +16,22 @@ body {
     background-color: #222;
     padding: 20px;
     margin-bottom: 20px;
+}
+
+.neon-text {
+    color: #00ff00;
+    text-shadow: 0 0 5px #00ff00, 0 0 10px #00ff00;
+}
+
+.neon-border {
+    border: 2px solid #00ff00;
+    box-shadow: 0 0 5px #00ff00, 0 0 10px #00ff00;
+}
+
+.cyberpunk-input {
+    background-color: #333;
+    border: 1px solid #00ff00;
+    color: #00ff00;
 }
 
 #canvas-container {
