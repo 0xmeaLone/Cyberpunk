@@ -36,7 +36,7 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 // Tambahkan ini di script.js
 document.addEventListener("DOMContentLoaded", () => {
-  const text = "Halo saya...";
+  const text = "Halo saya 0xmeaLone pengembang komunitas dan bisnis";
   const animatedText = document.getElementById("animated-text");
 
   // Pecah teks menjadi huruf per huruf
@@ -47,7 +47,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   // Tambahkan huruf ke dalam elemen teks
-  animatedText.innerHTML = "Halo saya 0xmeaLone pengembang komunitas dan bisnis"; // Kosongkan teks
+  animatedText.innerHTML = ""; // Kosongkan teks
   letters.forEach((span, index) => {
     animatedText.appendChild(span);
 
