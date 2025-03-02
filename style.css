@@ -189,3 +189,50 @@ nav {
   overflow: hidden;
   white-space: normal;
 }
+
+/* Scroll Up Button */
+.scroll-up-button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #00ffcc;
+  border: none;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 10px #00ffcc, 0 0 20px #00ffcc;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease;
+  z-index: 1000;
+}
+
+.scroll-up-button.visible {
+  opacity: 1;
+  visibility: visible;
+}
+
+.scroll-up-button:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 20px #00ffcc, 0 0 40px #00ffcc;
+}
+
+/* Logo DeepSeek */
+.logo {
+  width: 30px; /* Sesuaikan ukuran logo */
+  height: 30px;
+  animation: float 3s infinite ease-in-out;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
