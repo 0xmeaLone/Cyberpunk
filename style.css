@@ -93,13 +93,11 @@ nav {
   text-shadow: 0 0 10px #ff00ff, 0 0 20px #ff00ff;
 }
 
-/* Tambahkan ini di style.css */
-/* Tambahkan ini di style.css */
 #animated-text {
   font-size: 1.5rem;
   color: #00ffcc;
-  overflow: hidden; /* Sembunyikan teks yang belum muncul */
-  white-space: nowrap; /* Pastikan teks tidak wrap */
+  overflow: hidden;
+  white-space: normal; /* Teks dapat wrap ke baris baru */
 }
 /* Sections */
 section {
