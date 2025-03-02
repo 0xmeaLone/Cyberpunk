@@ -35,29 +35,22 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 // Tambahkan ini di script.js
+// Tambahkan ini di script.js
 document.addEventListener("DOMContentLoaded", () => {
-  const text = "Halo saya 0xmeaLone pengembang komunitas dan bisnis";
+  const text = "Halo saya...";
   const animatedText = document.getElementById("animated-text");
+  let index = 0;
 
-  // Pecah teks menjadi huruf per huruf
-  const letters = text.split("").map((letter) => {
-    const span = document.createElement("span");
-    span.textContent = letter;
-    return span;
-  });
+  function typeWriter() {
+    if (index < text.length) {
+      animatedText.textContent += text.charAt(index); // Tambahkan huruf satu per satu
+      index++;
+      setTimeout(typeWriter, 100); // Delay 100ms per huruf
+    }
+  }
 
-  // Tambahkan huruf ke dalam elemen teks
-  animatedText.innerHTML = ""; // Kosongkan teks
-  letters.forEach((span, index) => {
-    animatedText.appendChild(span);
-
-    // Atur delay animasi untuk setiap huruf
-    setTimeout(() => {
-      span.style.animation = `fadeInUp 0.5s forwards ${index * 0.1}s`;
-    }, index * 100); // Delay 100ms per huruf
-  });
+  typeWriter(); // Mulai animasi
 });
-
 // Efek Hover pada Card
 const cards = document.querySelectorAll(".card");
 cards.forEach((card) => {
