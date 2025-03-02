@@ -20,15 +20,13 @@ document.addEventListener("DOMContentLoaded", () => {
     menuList.classList.toggle("visible");
 
     if (menuList.classList.contains("visible")) {
-      // Animasi muncul satu per satu
       menuItems.forEach((item, index) => {
         setTimeout(() => {
           item.style.opacity = "1";
           item.style.transform = "translateX(0)";
-        }, index * 100); // Delay 100ms per item
+        }, index * 100);
       });
     } else {
-      // Reset animasi saat menu disembunyikan
       menuItems.forEach((item) => {
         item.style.opacity = "0";
         item.style.transform = "translateX(-20px)";
