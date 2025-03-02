@@ -49,25 +49,29 @@ nav {
 #menu-list {
   list-style: none;
   padding: 0;
-  margin: 10px 0;
+  margin: 0;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: rgba(13, 13, 13, 0.9);
+  border: 1px solid #00ffcc;
+  border-radius: 5px;
   opacity: 0;
   max-height: 0;
   overflow: hidden;
   transition: opacity 0.5s ease, max-height 0.5s ease;
+  z-index: 1000;
 }
 
 #menu-list.visible {
   opacity: 1;
-  max-height: 500px; /* Sesuaikan dengan tinggi menu */
+  max-height: 500px;
 }
 
 .menu-item {
-  background: rgba(26, 26, 26, 0.9);
   color: #00ffcc;
   padding: 10px 20px;
   margin: 5px 0;
-  border: 1px solid #00ffcc;
-  border-radius: 5px;
   opacity: 0;
   transform: translateX(-20px);
   transition: opacity 0.3s ease, transform 0.3s ease;
