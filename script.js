@@ -87,3 +87,18 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 });
+document.addEventListener("DOMContentLoaded", () => {
+  const partnerItems = document.querySelectorAll(".partner-item");
+
+  const checkVisibility = () => {
+    partnerItems.forEach((item) => {
+      const rect = item.getBoundingClientRect();
+      if (rect.top < window.innerHeight * 0.8) {
+        item.classList.add("visible");
+      }
+    });
+  };
+
+  checkVisibility();
+  window.addEventListener("scroll", checkVisibility);
+});
