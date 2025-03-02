@@ -10,6 +10,16 @@ document.addEventListener("scroll", () => {
   });
 });
 
+document.addEventListener("DOMContentLoaded", () => {
+  const menuItems = document.querySelectorAll(".menu-item");
+
+  menuItems.forEach((item, index) => {
+    setTimeout(() => {
+      item.style.opacity = "1";
+      item.style.transform = "translateY(0)";
+    }, index * 300);
+  });
+});
 // Efek Hover pada Card
 const cards = document.querySelectorAll(".card");
 cards.forEach((card) => {
