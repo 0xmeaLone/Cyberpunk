@@ -6,7 +6,7 @@
 }
 
 body {
-  font-family: 'Orbitron', sans-serif;
+  font-family: 'Rajdhani', sans-serif; /* Font utama untuk teks biasa */
   background-color: #0d0d0d;
   color: #fff;
   line-height: 1.6;
@@ -25,62 +25,9 @@ header {
   padding: 100px 0;
   text-align: center;
 }
-/* Tambahkan ini di style.css */
-nav {
-  position: relative;
-  margin: 20px;
-}
 
-#menu-toggle {
-  background: #00ffcc;
-  color: #0d0d0d;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  font-size: 1.2rem;
-  transition: box-shadow 0.3s ease;
-}
-
-#menu-toggle:hover {
-  box-shadow: 0 0 10px #00ffcc, 0 0 20px #00ffcc;
-}
-
-#menu-list {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  position: absolute;
-  top: 100%;
-  left: 0;
-  background: rgba(13, 13, 13, 0.9);
-  border: 1px solid #00ffcc;
-  border-radius: 5px;
-  opacity: 0;
-  max-height: 0;
-  overflow: hidden;
-  transition: opacity 0.5s ease, max-height 0.5s ease;
-  z-index: 1000;
-}
-
-#menu-list.visible {
-  opacity: 1;
-  max-height: 500px;
-}
-
-.menu-item {
-  color: #00ffcc;
-  padding: 10px 20px;
-  margin: 5px 0;
-  opacity: 0;
-  transform: translateX(-20px);
-  transition: opacity 0.3s ease, transform 0.3s ease;
-  cursor: pointer;
-}
-
-.menu-item:hover {
-  background: rgba(0, 255, 204, 0.1);
-  box-shadow: 0 0 10px #00ffcc, 0 0 20px #00ffcc;
+h1, h2, h3 {
+  font-family: 'Orbitron', sans-serif; /* Font untuk judul */
 }
 
 .neon-text {
@@ -93,12 +40,6 @@ nav {
   text-shadow: 0 0 10px #ff00ff, 0 0 20px #ff00ff;
 }
 
-#animated-text {
-  font-size: 1.5rem;
-  color: #00ffcc;
-  overflow: hidden;
-  white-space: normal; /* Teks dapat wrap ke baris baru */
-}
 /* Sections */
 section {
   padding: 60px 0;
@@ -175,4 +116,43 @@ footer {
 
 .neon-text {
   animation: glow 3s infinite;
+}
+
+/* Animasi Menu */
+#animated-menu {
+  padding: 60px 0;
+  background: rgba(13, 13, 13, 0.8);
+}
+
+.menu-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.menu-item {
+  background: rgba(26, 26, 26, 0.9);
+  color: #00ffcc;
+  padding: 10px 20px;
+  margin: 5px 0;
+  border: 1px solid #00ffcc;
+  border-radius: 5px;
+  opacity: 0;
+  transform: translateX(-20px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  cursor: pointer;
+}
+
+.menu-item:hover {
+  background: rgba(0, 255, 204, 0.1);
+  box-shadow: 0 0 10px #00ffcc, 0 0 20px #00ffcc;
+}
+
+/* Animasi Teks Ketik */
+#animated-text {
+  font-size: 1.5rem;
+  color: #00ffcc;
+  overflow: hidden;
+  white-space: normal;
 }
