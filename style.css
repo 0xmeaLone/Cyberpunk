@@ -25,6 +25,37 @@ header {
   padding: 100px 0;
   text-align: center;
 }
+#animated-menu {
+  padding: 60px 0;
+  background: rgba(13, 13, 13, 0.8);
+}
+
+.menu-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.menu-item {
+  background: rgba(26, 26, 26, 0.9);
+  color: #00ffcc;
+  padding: 15px 30px;
+  border: 1px solid #00ffcc;
+  border-radius: 5px;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+  cursor: pointer;
+  text-align: center;
+  width: 80%;
+  max-width: 600px;
+}
+
+.menu-item:hover {
+  background: rgba(0, 255, 204, 0.1);
+  box-shadow: 0 0 10px #00ffcc, 0 0 20px #00ffcc;
+}
 
 .neon-text {
   color: #00ffcc;
