@@ -232,21 +232,21 @@ nav {
 }
 /* Partner Section */
 #partners {
-  padding: 60px 0;
+  padding: 40px 0;
   background: rgba(13, 13, 13, 0.9);
 }
 
 .partner-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 15px;
   justify-items: center;
   align-items: center;
 }
 
 .partner-item {
   background: rgba(26, 26, 26, 0.9);
-  padding: 20px;
+  padding: 15px;
   border: 1px solid #00ffcc;
   border-radius: 10px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -254,7 +254,7 @@ nav {
   transform: translateY(20px);
   transition: opacity 0.5s ease, transform 0.5s ease;
   width: 100%;
-  max-width: 200px;
+  max-width: 150px;
   text-align: center;
 }
 
@@ -264,12 +264,12 @@ nav {
 }
 
 .partner-item:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 0 20px #00ffcc;
+  transform: translateY(-5px);
+  box-shadow: 0 0 15px #00ffcc;
 }
 
 .partner-item img {
-  max-width: 100%;
+  max-width: 80%;
   height: auto;
   filter: grayscale(100%);
   transition: filter 0.3s ease;
