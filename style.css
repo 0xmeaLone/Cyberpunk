@@ -253,6 +253,9 @@ nav {
   opacity: 0;
   transform: translateY(20px);
   transition: opacity 0.5s ease, transform 0.5s ease;
+  width: 100%;
+  max-width: 200px;
+  text-align: center;
 }
 
 .partner-item.visible {
@@ -266,7 +269,7 @@ nav {
 }
 
 .partner-item img {
-  width: 100%;
+  max-width: 100%;
   height: auto;
   filter: grayscale(100%);
   transition: filter 0.3s ease;
