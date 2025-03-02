@@ -1,37 +1,23 @@
-$(document).ready(function() {
-    // Initialize the carousel
-    $('.partner-carousel').slick({
-        slidesToShow: 4,
-        slidesToScroll: 1,
-        autoplay: true,
-        autoplaySpeed: 2000,
-        responsive: [
-            {
-                breakpoint: 992,
-                settings: {
-                    slidesToShow: 3
-                }
-            },
-            {
-                breakpoint: 768,
-                settings: {
-                    slidesToShow: 2
-                }
-            },
-            {
-                breakpoint: 480,
-                settings: {
-                    slidesToShow: 1
-                }
-            }
-        ]
+document.addEventListener('DOMContentLoaded', function() {
+    // Smooth scrolling untuk tautan navigasi
+    document.querySelectorAll('nav a').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+
+            document.querySelector(this.getAttribute('href')).scrollIntoView({
+                behavior: 'smooth'
+            });
+        });
     });
 
-    // Add typing animation to the hero section title
-    var typed = new Typed('.display-4', {
-        strings: ['Welcome to my Cyberpunk Portfolio'],
-        typeSpeed: 50,
-        backSpeed: 50,
-        loop: true
-    });
+    // Tambahkan efek hover pada item portofolio (opsional, bisa dilakukan dengan CSS)
+    // document.querySelectorAll('.portfolio-item img').forEach(img => {
+    //     img.addEventListener('mouseover', function() {
+    //         this.style.transform = 'scale(1.05)';
+    //     });
+    //
+    //     img.addEventListener('mouseout', function() {
+    //         this.style.transform = 'scale(1)';
+    //     });
+    // });
 });
