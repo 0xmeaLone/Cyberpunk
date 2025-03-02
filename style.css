@@ -1,158 +1,164 @@
 body {
-    background-color: #111;
-    color: #fff;
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f4f4f4;
 }
 
-.navbar {
-    padding: 10px 0;
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
-.navbar-brand {
-    font-weight: bold;
-    font-size: 24px;
+header {
+    background-color: #fff;
+    padding: 20px 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-.navbar-nav {
-    margin-left: auto;
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: center;
 }
 
-.navbar-nav li a {
-    color: #fff;
-    font-size: 16px;
-    margin-left: 10px;
+nav ul li {
+    display: inline;
+    margin: 0 20px;
 }
 
-.navbar-nav li a:hover {
-    color: #00ff00;
+nav ul li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    transition: color 0.3s ease;
 }
 
-.hero-section {
-    background-image: url('https://images.pexels.com/photos/1063957/pexels-photo.jpg');
+nav ul li a:hover {
+    color: #007bff;
+}
+
+.hero {
+    background-image: url('placeholder-hero.jpg'); /* Ganti dengan gambar Anda */
     background-size: cover;
     background-position: center;
-    padding: 100px 0;
+    height: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    position: relative;
 }
 
-.hero-section .display-4 {
-    font-weight: bold;
-    font-size: 48px;
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Overlay gelap */
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+}
+
+.hero-content h1 {
+    font-size: 3em;
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+
+.hero-content p {
+    font-size: 1.2em;
+    font-weight: 300;
+}
+
+.about {
+    padding: 80px 0;
+    background-color: #fff;
+}
+
+.about-content {
+    display: flex;
+    align-items: center;
+}
+
+.about-image {
+    flex: 1;
+    text-align: center;
+}
+
+.about-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.about-text {
+    flex: 1;
+    padding-left: 50px;
+}
+
+.about-text h2 {
     margin-bottom: 20px;
 }
 
-.hero-section .lead {
-    font-size: 18px;
-    margin-bottom: 30px;
+.portfolio {
+    padding: 80px 0;
+    background-color: #f9f9f9;
+    text-align: center;
 }
 
-.hero-section .btn {
-    margin-top: 20px;
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    margin-top: 30px;
 }
 
-.about-section {
-    padding: 50px 0;
-}
-
-.about-section img {
+.portfolio-item img {
     width: 100%;
     height: auto;
-    margin-bottom: 20px;
+    display: block;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
 }
 
-.about-section p {
-    font-size: 16px;
-    line-height: 1.5;
-    margin-bottom: 20px;
+.portfolio-item img:hover {
+    transform: scale(1.05);
 }
 
-.portfolio-section {
-    padding: 50px 0;
-}
-
-.portfolio-section .card {
-    border: none;
-    background-color: transparent;
-}
-
-.portfolio-section .card-img-top {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-}
-
-.portfolio-section .card-title {
-    font-weight: bold;
-    font-size: 20px;
-    margin-bottom: 10px;
-}
-
-.portfolio-section .card-text {
-    font-size: 14px;
-    line-height: 1.5;
-    margin-bottom: 10px;
-}
-
-.portfolio-section .btn {
-    margin-top: 10px;
-}
-
-.partners-section {
-    padding: 50px 0;
-}
-
-.partners-section .partner-carousel {
-    margin-top: 20px;
-}
-
-.partners-section .partner-carousel .partner-item {
+.contact {
+    padding: 80px 0;
+    background-color: #fff;
     text-align: center;
 }
 
-.partners-section .partner-carousel .partner-item img {
-    width: 100%;
-    height: 100px;
-    object-fit: cover;
-    margin-bottom: 10px;
-}
-
-.contact-section {
-    padding: 50px 0;
-}
-
-.contact-section .text-white {
+footer {
+    background-color: #333;
     color: #fff;
-}
-
-.contact-section p {
-    font-size: 16px;
-    line-height: 1.5;
-    margin-bottom: 10px;
-}
-
-.footer {
-    background-color: #222;
     padding: 20px 0;
-}
-
-.footer p {
-    font-size: 14px;
-    color: #fff;
     text-align: center;
 }
 
+/* Responsif */
 @media (max-width: 768px) {
-    .hero-section .display-4 {
-        font-size: 36px;
+    .about-content {
+        flex-direction: column;
     }
 
-    .hero-section .lead {
-        font-size: 16px;
-    }
-
-    .portfolio-section .card-img-top {
-        height: 150px;
-    }
-
-    .partners-section .partner-carousel .partner-item img {
-        height: 80px;
+    .about-text {
+        padding-left: 0;
+        margin-top: 30px;
     }
 }
