@@ -47,7 +47,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   // Tambahkan huruf ke dalam elemen teks
-  animatedText.innerHTML = Halo saya 0xmeaLone pengembang komunitas dan bisnis"; // Kosongkan teks
+  animatedText.innerHTML = "Halo saya 0xmeaLone pengembang komunitas dan bisnis"; // Kosongkan teks
   letters.forEach((span, index) => {
     animatedText.appendChild(span);
 
