@@ -195,8 +195,8 @@ nav {
   position: fixed;
   bottom: 20px;
   right: 20px;
-  background: #9f00ff;
-  box-shadow: 0 0 10px #bc13fe, 0 0 20px #bc13fe;
+  background: #000000;
+  box-shadow: 0 0 10px #00ffcc, 0 0 20px #00ffcc;
   border: none;
   border-radius: 50%;
   width: 60px;
