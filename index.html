@@ -1,81 +1,64 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Adeola Adeoti Inspired Portfolio</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio Cyberpunk</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <nav>
-            <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#portfolio">Portfolio</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
+  <header>
+    <div class="container">
+      <h1 class="neon-text">Nama Anda</h1>
+      <p class="tagline">Desainer & Pengembang Futuristik</p>
+    </div>
+  </header>
 
-    <section id="home" class="hero">
-        <div class="hero-content">
-            <h1>Adeola Adeoti</h1>
-            <p>Web Developer & Designer</p>
-        </div>
-    </section>
+  <section id="about">
+    <div class="container">
+      <h2 class="neon-text">Tentang Saya</h2>
+      <p>Halo! Saya seorang desainer dan pengembang dengan passion untuk teknologi dan dunia cyberpunk.</p>
+    </div>
+  </section>
 
-    <section id="about" class="about">
-        <div class="container">
-            <div class="about-content">
-                <div class="about-image">
-                    <img src="placeholder-about.jpg" alt="About Image">
-                </div>
-                <div class="about-text">
-                    <h2>About Me</h2>
-                    <p>A brief description about Adeola Adeoti and their skills.</p>
-                </div>
-            </div>
+  <section id="portfolio">
+    <div class="container">
+      <h2 class="neon-text">Portfolio</h2>
+      <div class="grid">
+        <div class="card">
+          <h3>Proyek 1</h3>
+          <p>Deskripsi singkat proyek.</p>
         </div>
-    </section>
+        <div class="card">
+          <h3>Proyek 2</h3>
+          <p>Deskripsi singkat proyek.</p>
+        </div>
+        <div class="card">
+          <h3>Proyek 3</h3>
+          <p>Deskripsi singkat proyek.</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-    <section id="portfolio" class="portfolio">
-        <div class="container">
-            <h2>Portfolio</h2>
-            <div class="portfolio-grid">
-                <div class="portfolio-item">
-                    <img src="placeholder-project1.jpg" alt="Project 1">
-                </div>
-                <div class="portfolio-item">
-                    <img src="placeholder-project2.jpg" alt="Project 2">
-                </div>
-                <div class="portfolio-item">
-                    <img src="placeholder-project3.jpg" alt="Project 3">
-                </div>
-                <div class="portfolio-item">
-                    <img src="placeholder-project4.jpg" alt="Project 4">
-                </div>
-                <div class="portfolio-item">
-                    <img src="placeholder-project5.jpg" alt="Project 5">
-                </div>
-                <div class="portfolio-item">
-                    <img src="placeholder-project6.jpg" alt="Project 6">
-                </div>
-            </div>
-        </div>
-    </section>
+  <section id="contact">
+    <div class="container">
+      <h2 class="neon-text">Kontak</h2>
+      <form>
+        <input type="text" placeholder="Nama Anda" required>
+        <input type="email" placeholder="Email Anda" required>
+        <textarea placeholder="Pesan Anda" required></textarea>
+        <button type="submit" class="neon-button">Kirim Pesan</button>
+      </form>
+    </div>
+  </section>
 
-    <section id="contact" class="contact">
-        <div class="container">
-            <h2>Contact</h2>
-            <p>Contact information and social links.</p>
-        </div>
-    </section>
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 Nama Anda. All rights reserved.</p>
+    </div>
+  </footer>
 
-    <footer>
-        <div class="container">
-            <p>&copy; 2024 Adeola Adeoti. All rights reserved.</p>
-        </div>
-    </footer>
+  <script src="script.js"></script>
 </body>
 </html>
