@@ -66,3 +66,24 @@ cards.forEach((card) => {
     card.style.boxShadow = "none";
   });
 });
+
+document.addEventListener("DOMContentLoaded", () => {
+  const scrollUpButton = document.getElementById("scroll-up");
+
+  // Tampilkan tombol saat halaman di-scroll ke bawah
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > 300) {
+      scrollUpButton.classList.add("visible");
+    } else {
+      scrollUpButton.classList.remove("visible");
+    }
+  });
+
+  // Scroll ke atas saat tombol diklik
+  scrollUpButton.addEventListener("click", () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
+  });
+});
