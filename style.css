@@ -163,23 +163,19 @@ nav {
 }
 
 .menu-item {
-  color: #00ffcc;
-  padding: 10px 15px;
   margin: 0;
-  opacity: 0;
-  transform: translateX(-20px);
-  transition: opacity 0.3s ease, transform 0.3s ease;
-  cursor: pointer;
-  border-bottom: 1px solid rgba(0, 255, 204, 0.1);
 }
 
-.menu-item:last-child {
-  border-bottom: none;
+.menu-item a {
+  color: #00ffcc;
+  text-decoration: none;
+  display: block;
+  padding: 10px 15px;
 }
 
-.menu-item:hover {
+.menu-item a:hover {
+  color: #ffffff;
   background: rgba(0, 255, 204, 0.1);
-  box-shadow: 0 0 10px #00ffcc, 0 0 20px #00ffcc;
 }
 
 /* Animasi Teks Ketik */
