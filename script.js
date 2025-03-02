@@ -35,21 +35,26 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 // Tambahkan ini di script.js
-// Tambahkan ini di script.js
 document.addEventListener("DOMContentLoaded", () => {
-  const text = "Halo saya adalah pengembang komunitas dan bisnis professional";
+  const text = "Halo saya... (teks panjang bisa ditambahkan di sini untuk pengujian)";
   const animatedText = document.getElementById("animated-text");
   let index = 0;
 
   function typeWriter() {
     if (index < text.length) {
-      animatedText.textContent += text.charAt(index); // Tambahkan huruf satu per satu
+      animatedText.textContent += text.charAt(index);
       index++;
-      setTimeout(typeWriter, 100); // Delay 100ms per huruf
+
+      // Scroll otomatis jika teks terlalu panjang
+      if (animatedText.scrollHeight > animatedText.clientHeight) {
+        animatedText.scrollTop = animatedText.scrollHeight;
+      }
+
+      setTimeout(typeWriter, 100);
     }
   }
 
-  typeWriter(); // Mulai animasi
+  typeWriter();
 });
 // Efek Hover pada Card
 const cards = document.querySelectorAll(".card");
