@@ -1,4 +1,4 @@
-// Animasi Scroll
+// Animasi Scroll (Kode Anda yang sudah ada)
 document.addEventListener("scroll", () => {
   const sections = document.querySelectorAll("section");
   sections.forEach((section) => {
@@ -10,7 +10,7 @@ document.addEventListener("scroll", () => {
   });
 });
 
-// Tambahkan ini di script.js
+// Menu Toggle dan Animasi (Kode Anda yang sudah ada)
 document.addEventListener("DOMContentLoaded", () => {
   const menuToggle = document.getElementById("menu-toggle");
   const menuList = document.getElementById("menu-list");
@@ -33,30 +33,105 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     }
   });
-});
-// Tambahkan ini di script.js
-document.addEventListener("DOMContentLoaded", () => {
-  const text = "";
-  const animatedText = document.getElementById("animated-text");
-  let index = 0;
 
-  function typeWriter() {
-    if (index < text.length) {
-      animatedText.textContent += text.charAt(index);
-      index++;
+  // --- Start: Penyesuaian untuk Efek Pengetikan di Bagian About dan Portfolio ---
 
-      // Scroll otomatis jika teks terlalu panjang
-      if (animatedText.scrollHeight > animatedText.clientHeight) {
-        animatedText.scrollTop = animatedText.scrollHeight;
-      }
+  // Efek pengetikan untuk bagian 'Tentang Saya' (About)
+  const animatedTextElement = document.getElementById("animated-text");
+  // Pastikan elemen 'animated-text' memiliki teks di HTML (seperti di contoh HTML sebelumnya)
+  const textToAnimateAbout = animatedTextElement ? animatedTextElement.textContent : '';
+  if (animatedTextElement) {
+    animatedTextElement.textContent = ''; // Kosongkan teks di awal
+  }
 
-      setTimeout(typeWriter, 100);
+  let charIndexAbout = 0;
+  const typingSpeedAbout = 50; // Kecepatan untuk section 'Tentang Saya'
+
+  function typeWriterAbout() {
+    if (animatedTextElement && charIndexAbout < textToAnimateAbout.length) {
+      animatedTextElement.textContent += textToAnimateAbout.charAt(charIndexAbout);
+      charIndexAbout++;
+      setTimeout(typeWriterAbout, typingSpeedAbout);
     }
   }
 
-  typeWriter();
-});
-// Efek Hover pada Card
+  // Intersection Observer untuk memicu pengetikan di bagian 'Tentang Saya'
+  const aboutSection = document.getElementById('about');
+  if (aboutSection) {
+    const observerAbout = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting && !entry.target.classList.contains('animated-about')) {
+                // Reset dan mulai mengetik saat bagian 'about' terlihat
+                charIndexAbout = 0;
+                if (animatedTextElement) animatedTextElement.textContent = '';
+                typeWriterAbout();
+                entry.target.classList.add('animated-about'); // Tandai sudah dianimasikan
+                observerAbout.unobserve(aboutSection); // Hentikan observasi setelah animasi pertama
+            }
+        });
+    }, {
+        threshold: 0.5 // Pemicu saat 50% dari section terlihat
+    });
+    observerAbout.observe(aboutSection);
+  }
+
+
+  // Efek pengetikan untuk bagian 'Portfolio'
+  const portfolioElements = document.querySelectorAll('.typewriter-text');
+  const typingSpeedPortfolio = 30; // Kecepatan mengetik untuk portfolio (sesuaikan)
+
+  function typeSingleLine(element, text, charIdx, callback) {
+    if (charIdx < text.length) {
+      element.textContent += text.charAt(charIdx);
+      setTimeout(() => typeSingleLine(element, text, charIdx + 1, callback), typingSpeedPortfolio);
+    } else if (callback) {
+      callback(); // Panggil callback setelah baris selesai diketik
+    }
+  }
+
+  let currentPortfolioLine = 0;
+
+  function startPortfolioTypingSequence() {
+    if (currentPortfolioLine < portfolioElements.length) {
+      const currentElement = portfolioElements[currentPortfolioLine];
+      const originalText = currentElement.getAttribute('data-text');
+      if (originalText) {
+          currentElement.textContent = ''; // Kosongkan elemen sebelum mengetik
+          typeSingleLine(currentElement, originalText, 0, () => {
+              currentPortfolioLine++;
+              startPortfolioTypingSequence(); // Pindah ke baris berikutnya
+          });
+      } else {
+          // Jika tidak ada data-text, langsung ke baris berikutnya
+          currentPortfolioLine++;
+          startPortfolioTypingSequence();
+      }
+    }
+  }
+
+  // Intersection Observer untuk memicu pengetikan di bagian 'Portfolio'
+  const portfolioSection = document.getElementById('portfolio');
+  if (portfolioSection) {
+    const observerPortfolio = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting && !entry.target.classList.contains('animated-portfolio')) {
+          startPortfolioTypingSequence();
+          entry.target.classList.add('animated-portfolio'); // Tandai sudah dianimasikan
+          observerPortfolio.unobserve(portfolioSection); // Hentikan observasi
+        }
+      });
+    }, {
+      threshold: 0.3 // Pemicu saat 30% dari section terlihat
+    });
+    observerPortfolio.observe(portfolioSection);
+  }
+
+  // --- End: Penyesuaian untuk Efek Pengetikan ---
+
+}); // Penutup untuk DOMContentLoaded awal
+
+
+// Efek Hover pada Card (Kode Anda yang sudah ada)
 const cards = document.querySelectorAll(".card");
 cards.forEach((card) => {
   card.addEventListener("mouseenter", () => {
@@ -67,10 +142,10 @@ cards.forEach((card) => {
   });
 });
 
-document.addEventListener("DOMContentLoaded", () => {
+// Scroll Up Button (Kode Anda yang sudah ada)
+document.addEventListener("DOMContentLoaded", () => { // DOMContentLoaded ganda, bisa digabung
   const scrollUpButton = document.getElementById("scroll-up");
 
-  // Tampilkan tombol saat halaman di-scroll ke bawah
   window.addEventListener("scroll", () => {
     if (window.scrollY > 300) {
       scrollUpButton.classList.add("visible");
@@ -79,7 +154,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  // Scroll ke atas saat tombol diklik
   scrollUpButton.addEventListener("click", () => {
     window.scrollTo({
       top: 0,
@@ -87,7 +161,9 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 });
-document.addEventListener("DOMContentLoaded", () => {
+
+// Partner Item Visibility (Kode Anda yang sudah ada)
+document.addEventListener("DOMContentLoaded", () => { // DOMContentLoaded ganda, bisa digabung
   const partnerItems = document.querySelectorAll(".partner-item");
 
   const checkVisibility = () => {
